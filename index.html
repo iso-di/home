@@ -1433,6 +1433,13 @@
 
 </script>
 <script>
+  const serviceIcons = {
+  'Заміна дисплею': '<i class="fas fa-mobile-alt" style="color:#007aff;"></i>',
+  'Переклей скла дисплею': '<i class="fas fa-window-maximize" style="color:#00c853;"></i>',
+  'Заміна аккумулятора': '<i class="fas fa-battery-full" style="color:#ffb300;"></i>',
+  'Заміна заднього скла': '<i class="fas fa-square" style="color:#6c757d;"></i>',
+  'Заміна корпусу': '<i class="fas fa-border-all" style="color:#8e24aa;"></i>'
+};
 // Прайс ремонта
   const pricesRemont = {
    '16PM': [
@@ -1618,15 +1625,19 @@
       ]
   };
 
-  function renderTableRemont(model) {
-    const tbody = document.querySelector('#price-table-remont tbody');
-    tbody.innerHTML = '';
-    pricesRemont[model].forEach(item => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${item.service}</td><td class="price">${item.price}</td>`;
-      tbody.appendChild(tr);
-    });
-  }
+function renderTableRemont(model) {
+  const tbody = document.querySelector('#price-table-remont tbody');
+  tbody.innerHTML = '';
+  pricesRemont[model].forEach(item => {
+    // Получаем иконку для услуги
+    const icon = serviceIcons[item.service] || '';
+    const serviceText = `${icon} <span style="margin-left:8px;">${item.service}</span>`;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${serviceText}</td><td class="price">${item.price}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+  
 
   document.getElementById('model-remont').addEventListener('change', function() {
     renderTableRemont(this.value);
