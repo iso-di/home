@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Прайс ремонта iPhone</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #f5f5f7;
+      margin: 0;
+      color: #1d1d1f;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 18px 0 8px 0;
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .apple-logo {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 6px;
+      display: block;
+      opacity: 0.85;
+    }
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1px;
+      color: #1d1d1f;
+    }
+    header p {
+      font-size: 1rem;
+      color: #86868b;
+      margin: 6px 0 0 0;
+    }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 12px 8px 24px 8px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      margin-top: 18px;
+    }
+    .model-select {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .model-select label {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: block;
+      color: #1d1d1f;
+    }
+    .custom-select {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    select {
+      width: 100%;
+      font-size: 1.1rem;
+      padding: 12px 40px 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #d2d2d7;
+      background: #f5f5f7;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      cursor: pointer;
+      font-weight: 500;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    select:focus {
+      border-color: #0071e3;
+      box-shadow: 0 0 0 2px #0071e333;
+    }
+    .custom-select::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #0071e3;
+      transform: translateY(-50%);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: transparent;
+      font-size: 1.05rem;
+    }
+    th, td {
+      padding: 12px 6px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+    }
+    th {
+      background: #f5f5f7;
+      font-weight: 600;
+      color: #0071e3;
+      font-size: 1.05rem;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tbody tr {
+      transition: background 0.2s;
+    }
+    tbody tr:hover {
+      background: #f0f4ff;
+    }
+    .price {
+      font-weight: 600;
+      color: #0071e3;
+      font-size: 1.05rem;
+    }
+    @media (max-width: 500px) {
+      .container {
+        max-width: 98vw;
+        padding: 8px 2vw 18px 2vw;
+        border-radius: 10px;
+        margin-top: 8px;
+      }
+      .apple-logo {
+        font-size: 22px;
+        margin-bottom: 2px;
+      }
+      header h1 {
+        font-size: 1.05rem;
+      }
+      select {
+        font-size: 1rem;
+        padding: 10px 32px 10px 10px;
+      }
+      th, td {
+        padding: 8px 2px;
+        font-size: 0.98rem;
+      }
+    }
+    @media (max-width: 350px) {
+      .container {
+        padding: 2px 0 8px 0;
+      }
+      .apple-logo {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 5px 1px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="apple-logo" aria-label="Apple logo"></span>
+    <h1>Прайс ремонта iPhone</h1>
+    <p>Выберите модель для просмотра стоимости ремонта</p>
+  </header>
+  <div class="container">
+    <div class="model-select">
+      <label for="model">Модель iPhone:</label>
+      <span class="custom-select">
+        <select id="model">
+          <option value="13pro">iPhone 13 Pro</option>
+          <option value="13">iPhone 13</option>
+          <option value="12pro">iPhone 12 Pro</option>
+          <option value="12">iPhone 12</option>
+          <option value="11pro">iPhone 11 Pro</option>
+          <option value="11">iPhone 11</option>
+          <option value="xr">iPhone XR</option>
+          <option value="x">iPhone X</option>
+          <option value="8">iPhone 8</option>
+          <option value="se">iPhone SE</option>
+        </select>
+      </span>
+    </div>
+    <table id="price-table">
+      <thead>
+        <tr>
+          <th>Вид ремонта</th>
+          <th>Цена, грн</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS will fill this -->
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const prices = {
+      '13pro': [
+        { service: 'Замена экрана', price: '6500' },
+        { service: 'Замена аккумулятора', price: '1800' },
+        { service: 'Замена задней крышки', price: '3500' },
+        { service: 'Замена камеры', price: '2200' }
+      ],
+      '13': [
+        { service: 'Замена экрана', price: '6000' },
+        { service: 'Замена аккумулятора', price: '1700' },
+        { service: 'Замена задней крышки', price: '3200' },
+        { service: 'Замена камеры', price: '2000' }
+      ],
+      '12pro': [
+        { service: 'Замена экрана', price: '5500' },
+        { service: 'Замена аккумулятора', price: '1600' },
+        { service: 'Замена задней крышки', price: '3000' },
+        { service: 'Замена камеры', price: '1800' }
+      ],
+      '12': [
+        { service: 'Замена экрана', price: '5000' },
+        { service: 'Замена аккумулятора', price: '1500' },
+        { service: 'Замена задней крышки', price: '2800' },
+        { service: 'Замена камеры', price: '1600' }
+      ],
+      '11pro': [
+        { service: 'Замена экрана', price: '4500' },
+        { service: 'Замена аккумулятора', price: '1400' },
+        { service: 'Замена задней крышки', price: '2500' },
+        { service: 'Замена камеры', price: '1400' }
+      ],
+      '11': [
+        { service: 'Замена экрана', price: '4000' },
+        { service: 'Замена аккумулятора', price: '1300' },
+        { service: 'Замена задней крышки', price: '2200' },
+        { service: 'Замена камеры', price: '1200' }
+      ],
+      'xr': [
+        { service: 'Замена экрана', price: '3500' },
+        { service: 'Замена аккумулятора', price: '1200' },
+        { service: 'Замена задней крышки', price: '2000' },
+        { service: 'Замена камеры', price: '1000' }
+      ],
+      'x': [
+        { service: 'Замена экрана', price: '3200' },
+        { service: 'Замена аккумулятора', price: '1100' },
+        { service: 'Замена задней крышки', price: '1800' },
+        { service: 'Замена камеры', price: '900' }
+      ],
+      '8': [
+        { service: 'Замена экрана', price: '2500' },
+        { service: 'Замена аккумулятора', price: '900' },
+        { service: 'Замена задней крышки', price: '1200' },
+        { service: 'Замена камеры', price: '700' }
+      ],
+      'se': [
+        { service: 'Замена экрана', price: '1800' },
+        { service: 'Замена аккумулятора', price: '800' },
+        { service: 'Замена задней крышки', price: '1000' },
+        { service: 'Замена камеры', price: '600' }
+      ]
+    };
+
+    function renderTable(model) {
+      const tbody = document.querySelector('#price-table tbody');
+      tbody.innerHTML = '';
+      prices[model].forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${item.service}</td><td class="price">${item.price}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('model').addEventListener('change', function() {
+      renderTable(this.value);
+    });
+
+    // Initial render
+    renderTable(document.getElementById('model').value);
+  </script>
+</body>
+</html>
