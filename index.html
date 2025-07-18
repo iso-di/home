@@ -167,7 +167,6 @@
     <div class="dropdown-item" onclick="filterByCategory('och')">Розрахунок ОЧ</div>
     <div class="dropdown-item" onclick="filterByCategory('iphone_check')">Перевірка iPhone</div>
     <div class="dropdown-item" onclick="filterByCategory('pencil')">Підібрати Pencil</div>
-    <div class="dropdown-item" onclick="filterByCategory('remont')">Прайс ремонт</div>
   </div>
 </div>
 
@@ -846,6 +845,77 @@
 
 
 
+<div class="card" style="max-width: 800px; margin: 40px auto; background: #fff; padding: 20px;">
+    <div class="info-container">
+      <h2 style="font-size: 28px; color: #333; font-weight: 600; margin-bottom: 20px;">Прайс заміна АКБ</h2>
+      <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding: 12px 18px; font-size: 18px; color: #007aff;">Модель</th>
+            <th style="text-align: right; padding: 12px 18px; font-size: 18px; color: #007aff;">Вартість</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">6 , 6s / 6 Plus </td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 800</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">7 / 7 Plus</td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 1000</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">8 / 8 Plus</td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 1000</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">X / XS / XS Max</td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 1800 / 1900 / 2100</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">XR / SE2</td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 1800 / 1800</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">11 / 11 Pro / 11PM</td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 2200 / 2300 / 2700</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">12 / 12 Pro / 12PM </td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 2600 / 2600 / 3000</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">13 / 13 Pro / 13PM </td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 3300 / 3300 / 4000</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e5e5ea;">
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">14 / 14 Pro / 14PM </td>
+            <td style="padding: 14px 18px; font-size: 16px; color: #333;">
+              <span style="color: red; font-weight: 600;"> 3500 / 3500 / 4300 </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
   
   
 </div>
@@ -1007,223 +1077,6 @@
     </ul>
     <div class="warning" style="margin-top: 20px; color: red; font-weight: bold;">
       При покупці телефона клієнта обов'язково робимо скидання контенту та налаштувань і активуємо через SIM-карту!
-    </div>
-  </div>
-</div>
-
-<div id="remont" class="page" style="display:none;">
-  <style>
-    #remont .apple-logo {
-      font-size: 40px;
-      color: #000;
-      margin-bottom: 10px;
-      display: block;
-      opacity: 0.85;
-      text-align: center;
-      transition: font-size 0.2s;
-    }
-    #remont .remont-card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-      padding: 24px 16px 20px 16px;
-      max-width: 430px;
-      margin: 32px auto;
-      animation: fadeIn 0.7s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    #remont h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1px;
-      color: #1d1d1f;
-      text-align: center;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    #remont p {
-      font-size: 1rem;
-      color: #86868b;
-      margin: 12px 0 18px 0;
-      text-align: center;
-    }
-    #remont .model-select label {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 8px;
-      display: block;
-      color: #1d1d1f;
-      text-align: left;
-    }
-    #remont .custom-select {
-      position: relative;
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto 20px auto;
-    }
-    #remont select {
-      width: 100%;
-      font-size: 1.1rem;
-      padding: 12px 40px 12px 16px;
-      border-radius: 12px;
-      border: 1px solid #d2d2d7;
-      background: #f5f5f7;
-      outline: none;
-      transition: border 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      cursor: pointer;
-      font-weight: 500;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-    #remont select:focus {
-      border-color: #0071e3;
-      box-shadow: 0 0 0 2px #0071e333;
-    }
-    #remont .custom-select::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 18px;
-      width: 0;
-      height: 0;
-      pointer-events: none;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 7px solid #0071e3;
-      transform: translateY(-50%);
-    }
-    #remont .table-wrapper {
-      overflow-x: auto;
-      width: 100%;
-    }
-    #remont table {
-      width: 100%;
-      min-width: 320px;
-      border-collapse: collapse;
-      margin-top: 8px;
-      background: transparent;
-      font-size: 1rem;
-    }
-    #remont th, #remont td {
-      padding: 14px 8px;
-      text-align: left;
-      border-bottom: 1px solid #eaeaea;
-      white-space: nowrap;
-    }
-    #remont th {
-      background: #f5f5f7;
-      font-weight: 600;
-      color: #0071e3;
-      font-size: 1.05rem;
-      border-radius: 8px 8px 0 0;
-    }
-    #remont tr:last-child td {
-      border-bottom: none;
-    }
-    #remont tbody tr {
-      transition: background 0.2s;
-    }
-    #remont tbody tr:hover {
-      background: #f0f4ff;
-    }
-    #remont .price {
-      font-weight: 600;
-      color: #0071e3;
-      font-size: 1.05rem;
-    }
-    @media (max-width: 500px) {
-      #remont .remont-card {
-        max-width: 99vw;
-        padding: 12px 2vw 16px 2vw;
-        border-radius: 10px;
-        margin: 12px auto;
-      }
-      #remont .apple-logo {
-        font-size: 28px;
-        margin-bottom: 4px;
-      }
-      #remont h2 {
-        font-size: 1.2rem;
-      }
-      #remont select {
-        font-size: 1rem;
-        padding: 10px 32px 10px 10px;
-      }
-      #remont th, #remont td {
-        padding: 10px 2px;
-        font-size: 0.98rem;
-      }
-    }
-    @media (max-width: 350px) {
-      #remont .remont-card {
-        padding: 2px 0 8px 0;
-      }
-      #remont .apple-logo {
-        font-size: 16px;
-      }
-      #remont th, #remont td {
-        padding: 6px 1px;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
-  <div class="remont-card">
-        <p>Оберіть модель для перегляду вартості ремонту</p>
-<div class="model-select" style="margin-bottom:18px; text-align:center;">
-  <label for="model-remont" style="font-size:1.1rem; font-weight:500; margin-bottom:8px; color:#1d1d1f; display:inline-block;">Модель iPhone:</label>
-  <span class="custom-select" style="display:inline-block; width:100%; max-width:320px;">
-    <select id="model-remont" style="width:100%; font-size:1.1rem; padding:12px 40px 12px 16px; border-radius:12px; border:1px solid #d2d2d7; background:#f5f5f7; outline:none; transition:border 0.2s, box-shadow 0.2s; box-shadow:0 2px 8px rgba(0,0,0,0.04); cursor:pointer; font-weight:500; appearance:none;">
-          <option value="16PM">iPhone 16 Pro Max</option>
-          <option value="16P">iPhone 16 Pro</option>
-          <option value="16plus">iPhone 16 +</option>
-          <option value="16">iPhone 16 </option>
-          <option value="15PM">iPhone 15 Pro Max</option>
-          <option value="15P">iPhone 15 Pro</option>
-          <option value="15plus">iPhone 15 +</option>
-          <option value="15">iPhone 15 </option>
-          <option value="14PM">iPhone 14 Pro Max</option>
-          <option value="14P">iPhone 14 Pro</option>
-          <option value="14plus">iPhone 14 +</option>
-          <option value="14">iPhone 14 </option>
-          <option value="13PM">iPhone 13 Pro Max</option>
-          <option value="13P">iPhone 13 Pro</option>
-          <option value="13mini">iPhone 13 mini</option>
-          <option value="13">iPhone 13 </option>
-          <option value="12PM">iPhone 12 Pro Max</option>
-          <option value="12P">iPhone 12 Pro</option>
-          <option value="12mini">iPhone 12 mini</option>
-          <option value="12">iPhone 12 </option>
-          <option value="11PM">iPhone 11 Pro Max</option>
-          <option value="11P">iPhone 11 Pro</option>
-          <option value="11">iPhone 11</option>
-          <option value="XSMax">iPhone XS Max </option>
-          <option value="XS">iPhone XS</option>
-          <option value="X">iPhone X</option>
-          <option value="XR">iPhone XR</option>
-          <option value="SE2">iPhone SE 2020</option>
-          <option value="8plus">iPhone 8 +</option>
-          <option value="8">iPhone 8</option>
-    </select>
-  </span>
-</div>
-    <div class="table-wrapper">
-      <table id="price-table-remont">
-        <thead>
-          <tr>
-            <th>Вид ремонту</th>
-            <th>Ціна, грн</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- JS will fill this -->
-        </tbody>
-      </table>
     </div>
   </div>
 </div>
@@ -1435,223 +1288,6 @@
 
 </script>
 <script>
-// Прайс ремонта
-const prices = {
-      '16PM': [
-        { service: 'Заміна дисплею', price: '22 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '16P': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '16plus': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '16': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '15PM': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '15P': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '15plus': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '15': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '14PM': [
-        { service: 'Заміна дисплею', price: '16 500' },
-        { service: 'Переклей скла дисплею', price: '7 000' },
-        { service: 'Заміна аккумулятора', price: '4 300' },
-        { service: 'Заміна заднього скла', price: '4 000' },
-      ],
-            '14P': [
-        { service: 'Заміна дисплею', price: '16 500' },
-        { service: 'Переклей скла дисплею', price: '5 500' },
-        { service: 'Заміна аккумулятора', price: '3 500' },
-        { service: 'Заміна заднього скла', price: '4 000' },
-      ],
-            '14plus': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '14': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '13PM': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 800' },
-      ],
-            '13P': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '13mini': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '13': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '12PM': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '12P': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '12mini': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 800' },
-      ],
-            '12': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '11PM': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 0000' },
-      ],
-            '11P': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '11': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            'XSMAX': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            'XS': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            'X': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            'XR': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            'SE2': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '8plus': [
-        { service: 'Заміна дисплею', price: '00 000' },
-        { service: 'Переклей скла дисплею', price: '00 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ],
-            '8': [
-        { service: 'Заміна дисплею', price: '0 000' },
-        { service: 'Переклей скла дисплею', price: '0 000' },
-        { service: 'Заміна аккумулятора', price: '0 000' },
-        { service: 'Заміна заднього скла', price: '0 000' },
-      ]
-  };
-
-  function renderTableRemont(model) {
-    const tbody = document.querySelector('#price-table-remont tbody');
-    tbody.innerHTML = '';
-    pricesRemont[model].forEach(item => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${item.service}</td><td class="price">${item.price}</td>`;
-      tbody.appendChild(tr);
-    });
-  }
-
-  document.getElementById('model-remont').addEventListener('change', function() {
-    renderTableRemont(this.value);
-  });
-
-  // Initial render
-  if (document.getElementById('model-remont')) {
-    renderTableRemont(document.getElementById('model-remont').value);
-  }
-
-  // Показывать только выбранную секцию
-  function filterByCategory(category) {
-    const sections = {
-      tradein: document.getElementById('tradein'),
-      airpods: document.getElementById('airpods'),
-      och: document.getElementById('oplatabank'),
-      iphone_check: document.getElementById('iphone_check'),
-      pencil: document.getElementById('pencil'),
-      remont: document.getElementById('remont')
-    };
-    Object.keys(sections).forEach(key => sections[key] && (sections[key].style.display = key === category ? '' : 'none'));
-    dropdownMenu.classList.remove('show');
-  }
-
   function calculateFirst() {
     const X = parseFloat(document.getElementById("inputX").value);
     const selectedButton = document.querySelector('.button-group button[data-months].active');
