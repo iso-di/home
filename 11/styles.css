@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #1d1d1f;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+/* Логотип */
+.logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    margin: 0 auto 15px;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apple-logo {
+    font-size: 50px;
+    color: #1d1d1f;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.company-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.5px;
+}
+
+/* Поле пошуку */
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    color: #1d1d1f;
+}
+
+.search-box input::placeholder {
+    color: #8e8e93;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+/* Результати пошуку */
+.search-results {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: rgba(0, 122, 255, 0.05);
+}
+
+.search-result-item:active {
+    background-color: rgba(0, 122, 255, 0.1);
+}
+
+.phone-icon {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.phone-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #007AFF;
+}
+
+.phone-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.phone-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d1d1f;
+    line-height: 1.2;
+}
+
+.phone-info p {
+    font-size: 16px;
+    color: #007AFF;
+    font-weight: 600;
+    background: rgba(0, 122, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.search-result-item:hover .phone-info p {
+    background: rgba(0, 122, 255, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.2);
+}
+
+/* Повідомлення про відсутність результатів */
+.no-results {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    color: #8e8e93;
+}
+
+/* Модальне вікно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    background: white;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #8e8e93;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    padding-right: 40px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.phone-image {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.phone-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #f5f5f7;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-btn {
+    width: 100%;
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.order-btn:hover {
+    background: #0056CC;
+    transform: translateY(-1px);
+}
+
+.order-btn:active {
+    transform: translateY(0);
+}
+
+/* Адаптивність */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        padding-top: 40px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .company-name {
+        font-size: 24px;
+    }
+    
+    .search-box input {
+        padding: 16px 45px 16px 18px;
+        font-size: 15px;
+    }
+    
+    .modal-content {
+        margin: 10px;
+        border-radius: 16px;
+    }
+}
+
+/* Скроллбар */
+.search-results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Система трейд-іну */
+.trade-in-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 122, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 122, 255, 0.1);
+}
+
+.trade-in-section h3 {
+    margin: 0 0 20px 0;
+    color: #1d1d1f;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.trade-in-base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: rgba(52, 199, 89, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(52, 199, 89, 0.2);
+}
+
+.base-price-label {
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.base-price-value {
+    font-size: 18px;
+    color: #34C759;
+    font-weight: 700;
+}
+
+.trade-in-factors {
+    margin-bottom: 20px;
+}
+
+.factor-group {
+    margin-bottom: 16px;
+}
+
+.factor-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.factor-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 122, 255, 0.2);
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #1d1d1f;
+    transition: all 0.2s ease;
+}
+
+.factor-group select:focus {
+    outline: none;
+    border-color: #007AFF;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.trade-in-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #007AFF, #5856D6);
+    border-radius: 16px;
+    color: white;
+}
+
+.final-price-label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.final-price-value {
+    font-size: 24px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+/* Соціальні мережі */
+.social-links {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    text-decoration: none;
+    color: #1d1d1f;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+}
+
+.social-link.telegram:hover {
+    background: #0088cc;
+    color: white;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 480px) {
+    .social-links {
+        bottom: 20px;
+        gap: 15px;
+    }
+    
+    .social-link {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    .social-link span {
+        display: none;
+    }
+    
+    .social-link svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .trade-in-section {
+        padding: 16px;
+        margin-top: 16px;
+    }
+    
+    .trade-in-section h3 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .factor-group select {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    
+    .trade-in-result {
+        padding: 14px 18px;
+    }
+    
+    .final-price-value {
+        font-size: 20px;
+    }
+}
