@@ -2,7 +2,7 @@
     "name": "PhoneStore - Пошук телефонів",
     "short_name": "PhoneStore",
     "description": "Знайдіть свій ідеальний телефон",
-    "start_url": "/",
+    "start_url": "/home/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007AFF",
