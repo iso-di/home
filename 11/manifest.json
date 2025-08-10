@@ -1,6 +1,6 @@
 {
     "name": "PhoneStore - Пошук телефонів",
-    "short_name": "PhoneStore",
+    "short_name": "PhoneStore1",
     "description": "Знайдіть свій ідеальний телефон",
     "start_url": "/home/11/",
     "display": "standalone",
