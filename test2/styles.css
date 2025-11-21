@@ -1,0 +1,637 @@
+/* Apple Top Menu */
+.apple-dock {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  left: auto;
+  transform: none;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dock-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.dock-container.expanded {
+  width: 60px;
+  height: auto;
+  border-radius: 18px;
+  padding-bottom: 15px;
+}
+
+.apple-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #1d1d1f;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.dock-container.expanded .apple-trigger {
+  transform: rotate(90deg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dock-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 60px;
+  /* Space for the apple icon at top */
+  transition: all 0.3s ease 0.1s;
+  width: 100%;
+}
+
+.dock-container.expanded .dock-items {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #86868b;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
+}
+
+.dock-item:hover {
+  color: #1d1d1f;
+  transform: scale(1.1);
+}
+
+.dock-item i {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.dock-item span {
+  font-size: 9px;
+  font-weight: 600;
+  display: none;
+  /* Hide text for cleaner vertical look, or keep it? Let's keep it hidden or very small */
+}
+
+.dock-container.expanded .dock-item span {
+  display: block;
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+/* Hide on scroll logic class - moves UP now */
+.apple-dock.hide {
+  transform: translateY(-150%);
+}
+
+/* Active state styling if needed, though currently handled by JS filtering logic mostly */
+
+/* Oche Block New Styles */
+.oche-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.oche-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.oche-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-left: 4px;
+}
+
+.oche-input {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  border-radius: 16px;
+  border: 1px solid #d2d2d7;
+  background: #f5f5f7;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.oche-input:focus {
+  border-color: #007aff;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
+}
+
+.bank-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.bank-card {
+  background: #f5f5f7;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 16px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bank-card:hover {
+  background: #e5e5ea;
+}
+
+.bank-card.active {
+  background: #fff;
+  border-color: #007aff;
+  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.bank-card.active .bank-name {
+  color: #007aff;
+}
+
+.bank-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.bank-name {
+  font-weight: 600;
+  font-size: 12px;
+  color: #1d1d1f;
+  transition: color 0.3s;
+}
+
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.month-btn {
+  background: #f5f5f7;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1d1d1f;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.month-btn:hover {
+  background: #e5e5ea;
+}
+
+.month-btn.active {
+  background: #007aff;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.result-box {
+  background: linear-gradient(135deg, #007aff 0%, #5ac8fa 100%);
+  border-radius: 24px;
+  padding: 30px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.25);
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.result-item {
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-value {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 400px) {
+  .months-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bank-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Keep 3 cols but smaller */
+  }
+
+  .bank-name {
+    font-size: 10px;
+  }
+}
+
+.button-group button.active {
+  background-color: #007aff;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  background-color: #f2f2f7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.apple-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #000;
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 100;
+  display: none;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeIn 0.7s;
+}
+
+.series,
+.model {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.series:hover,
+.model:hover {
+  background-color: #e5e5ea;
+}
+
+.sub-models {
+  display: none;
+  margin-left: 12px;
+}
+
+.details {
+  display: none;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  /* ✅ додаєш відступ знизу */
+  padding: 10px 12px;
+  border-left: 3px solid #007aff;
+  background-color: #f1f1f5;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.defect {
+  color: #ff3b30;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.defect2 {
+  color: #ff2ecbc9;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.defect3 {
+  color: #9900ff;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.defect4 {
+  color: #468306;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.defect5 {
+  color: #fa8e02;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Remont Styles */
+#remont .apple-logo {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 10px;
+  display: block;
+  opacity: 0.85;
+  text-align: center;
+  transition: font-size 0.2s;
+}
+
+#remont .remont-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#remont h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1px;
+  color: #1d1d1f;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+#remont p {
+  font-size: 1rem;
+  color: #86868b;
+  margin: 12px 0 18px 0;
+  text-align: center;
+}
+
+#remont .model-select label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #1d1d1f;
+  text-align: left;
+}
+
+#remont .custom-select {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 20px auto;
+}
+
+#remont select {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 12px 40px 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #d2d2d7;
+  background: #f5f5f7;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  font-weight: 500;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#remont select:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 2px #0071e333;
+}
+
+#remont .custom-select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #0071e3;
+  transform: translateY(-50%);
+}
+
+#remont .table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#remont table {
+  width: 100%;
+  min-width: 320px;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: transparent;
+  font-size: 1rem;
+}
+
+#remont th,
+#remont td {
+  padding: 14px 8px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+  white-space: nowrap;
+}
+
+#remont th {
+  background: #f5f5f7;
+  font-weight: 600;
+  color: #0071e3;
+  font-size: 1.05rem;
+  border-radius: 8px 8px 0 0;
+}
+
+#remont tr:last-child td {
+  border-bottom: none;
+}
+
+#remont tbody tr {
+  transition: background 0.2s;
+}
+
+#remont tbody tr:hover {
+  background: #f0f4ff;
+}
+
+#remont .price {
+  font-weight: 600;
+  color: #0071e3;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 500px) {
+  #remont .remont-card {
+    max-width: 99vw;
+    padding: 12px 2vw 16px 2vw;
+    border-radius: 10px;
+    margin: 12px auto;
+  }
+
+  #remont .apple-logo {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  #remont h2 {
+    font-size: 1.2rem;
+  }
+
+  #remont select {
+    font-size: 1rem;
+    padding: 10px 32px 10px 10px;
+  }
+
+  #remont th,
+  #remont td {
+    padding: 10px 2px;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 350px) {
+  #remont .remont-card {
+    padding: 2px 0 8px 0;
+  }
+
+  #remont .apple-logo {
+    font-size: 16px;
+  }
+
+  #remont th,
+  #remont td {
+    padding: 6px 1px;
+    font-size: 0.9rem;
+  }
+}
