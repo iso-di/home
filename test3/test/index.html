@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content=" iPhosha" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-192x192.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="header">
+    <button class="apple-btn"><i class="fab fa-apple"></i></button>
+    <button id="theme-toggle" class="theme-toggle-btn">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="search-input" placeholder="Пошук моделі (напр. 15 Pro)...">
+    </div>
+  </div>
+
+  <div class="liquid-bottom-nav">
+    <div class="nav-item" onclick="filterByCategory('tradein')"><i class="fas fa-exchange-alt"></i></div>
+    <div class="nav-item" onclick="filterByCategory('airpods')"><i class="fas fa-headphones-alt"></i></div>
+    <div class="nav-item" onclick="filterByCategory('och')"><i class="fas fa-calculator"></i></div>
+    <div class="nav-item" onclick="filterByCategory('iphone_check')"><i class="fas fa-search"></i></div>
+    <div class="nav-item" onclick="filterByCategory('pencil')"><i class="fas fa-pencil-alt"></i></div>
+    <div class="nav-item" onclick="filterByCategory('remont')"><i class="fas fa-tools"></i></div>
+  </div>
+
+  <div class="card" id="tradein">
+    <!-- Серія iPhone 17 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="tradein">
+      <span><i class="fas fa-layer-group"></i> 17 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 17 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><span>59 000 | <b><span style="color: #0251fa;"> 62
+                100</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>0 000 | <b><span style="color: #0251fa;"> 0
+                000</b></span></span></div>
+        <div class="price-row"><span>1/2 TB</span><span>0 000 | <b><span style="color: #0251fa;"> 0
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 3 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 500 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 0 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 5 000 грн</div>
+      </div>
+
+      <!-- Добавлены модели для iPhone 16 -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 17 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><span>53 000 | <b><span style="color: #0251fa;"> 56
+                100</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>00 000 | <b><span style="color: #0251fa;"> 0
+                000</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>0 000 | <b><span style="color: #0251fa;"> 0 000</b></span></span>
+        </div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 3 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 500 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 0 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 5 000 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone Air </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><b><span style="color: #0251fa;"> 38 000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><b><span style="color: #0251fa;"> 0 000</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><b><span style="color: #0251fa;"> 0 500</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 4 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 500 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 0 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 5 000 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 17</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><span>40 000 | <b><span style="color: #0251fa;"> 39
+                000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>45 600 | <b><span style="color: #0251fa;"> 39
+                500</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 3 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 500 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 0 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 4 000 грн</div>
+      </div>
+    </div>
+
+    <!-- Серія iPhone 16 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="tradein">
+      <span><i class="fas fa-layer-group"></i> 16 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 16 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><span>39 500 | <b><span style="color: #0251fa;"> 42
+                100</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>42 000 | <b><span style="color: #0251fa;"> 46
+                000</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>42 000 | <b><span style="color: #0251fa;"> 46
+                500</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 4 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 9 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <!-- Добавлены модели для iPhone 16 -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 16 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>33 100 | <b><span style="color: #0251fa;"> 35
+                700</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>38 000 | <b><span style="color: #0251fa;"> 39
+                700</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>39 000 | <b><span style="color: #0251fa;"> 42
+                000</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>39 500 | <b><span style="color: #0251fa;"> 43
+                200</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 4 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 9 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 16 + </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>26 000 | <b><span style="color: #0251fa;"> 28
+                000</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>29 000 | <b><span style="color: #0251fa;"> 31
+                000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>30 000 | <b><span style="color: #0251fa;"> 32
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 4 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 8 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 16</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>25 200 | <b><span style="color: #0251fa;"> 27
+                000</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>27 000 | <b><span style="color: #0251fa;"> 29
+                300</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>28 200 | <b><span style="color: #0251fa;"> 30
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 4 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 8 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 16e</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>13 000 | <b><span style="color: #0251fa;"> 16
+                000</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>15 000 | <b><span style="color: #0251fa;"> 17
+                200</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 4 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 8 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+    </div>
+
+    <!-- Добавлены серий для iPhone 15, 14, 13, 12, 11 -->
+    <!-- iPhone 15 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 15 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 15 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>256 GB</span><span>33 000 | <b><span style="color: #0251fa;"> 36
+                400</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>36 300 | <b><span style="color: #0251fa;"> 39
+                000</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>37 000 | <b><span style="color: #0251fa;"> 40
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 3 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 6 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <!-- iPhone 15 Pro -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 15 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>27 000 | <b><span style="color: #0251fa;"> 31
+                700</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>29 000 | <b><span style="color: #0251fa;"> 35
+                000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>30 000 | <b><span style="color: #0251fa;"> 35
+                500</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>30 000 | <b><span style="color: #0251fa;"> 36
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 800 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 5 200 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 15 +</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>22 500 | <b><span style="color: #0251fa;"> 24
+                200</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>23 700 | <b><span style="color: #0251fa;"> 26
+                200</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>24 600 | <b><span style="color: #0251fa;"> 27
+                200</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 4 600 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 15 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>20 100 | <b><span style="color: #0251fa;"> 22
+                700</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>24 000 | <b><span style="color: #0251fa;"> 25
+                700</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>24 000 | <b><span style="color: #0251fa;"> 26
+                500</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 300 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 800 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 900 грн</div>
+      </div>
+    </div>
+
+
+    <!-- iPhone 14 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 14 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 14 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>24 200 | <b><span style="color: #0251fa;"> 28
+                300</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>26 000 | <b><span style="color: #0251fa;"> 30
+                900</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>26 400 | <b><span style="color: #0251fa;"> 31
+                500</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>26 400 | <b><span style="color: #0251fa;"> 31
+                900</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 4 600 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 800 грн</div>
+      </div>
+
+      <!-- iPhone 15 Pro -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 14 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>21 500 | <b><span style="color: #0251fa;"> 25
+                000</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>23 500 | <b><span style="color: #0251fa;"> 27
+                000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>24 000 | <b><span style="color: #0251fa;"> 27
+                500</b></span></span></div>
+        <div class="price-row"><span>1 TB</span><span>24 000 | <b><span style="color: #0251fa;"> 27
+                800</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 400 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 900 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 800 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 14 +</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>14 000 | <b><span style="color: #0251fa;"> 16
+                000</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>16 000 | <b><span style="color: #0251fa;"> 19
+                000</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>16 000 | <b><span style="color: #0251fa;"> 19
+                000</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 200 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 4 100 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 14 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span>14 600 | <b><span style="color: #0251fa;"> 16
+                100</b></span></span></div>
+        <div class="price-row"><span>256 GB</span><span>16 600 | <b><span style="color: #0251fa;"> 18
+                500</b></span></span></div>
+        <div class="price-row"><span>512 GB</span><span>16 900 | <b><span style="color: #0251fa;"> 18
+                700</b></span></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 200 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+    </div>
+
+    <!-- iPhone 13 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 13 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 13 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 21 400</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 24 000</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 25 000</b></span></div>
+        <div class="price-row"><span>1 TB</span><span><b> 26 000</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 400 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 4 100 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 800 грн</div>
+      </div>
+
+      <!-- iPhone 13 Pro -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 13 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 18 000</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 19 300</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 20 500</b></span></div>
+        <div class="price-row"><span>1 TB</span><span><b> 20 800</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 200 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 600 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 800 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 13 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 13 800</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 14 800</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 14 800</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 100 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 13 Mini </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 9 500</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 10 500</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 11 000</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 100 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+    </div>
+
+    <!-- iPhone 12 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 12 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 12 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 15 000</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 16 300</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 16 800</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 100 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 4 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <!-- iPhone 12 Pro -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 12 Pro</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>128 GB</span><span><b> 13 000</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 14 000</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 14 600</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 900 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 12 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 9 100</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 10 700</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 11 400</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 900 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 12 Mini </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 6 000</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 7 000</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 7 200</b></span></div>
+        <div class="defect3"> • Викуп: - 2 000 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 900 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 2 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+    </div>
+
+    <!-- iPhone 11 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 11 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 11 Pro Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 8 500</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 10 300</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 10 300</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 2 100 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 3 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 500 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 11 Pro </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 7 300</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 9 200</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 9 200</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 900 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 2 700 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 500 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone 11</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 7 000</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 7 800</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 8 300</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 800 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 2 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 500 грн</div>
+      </div>
+    </div>
+
+    <!-- iPhone X -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> 10 Лінійка</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone XS Max</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 4 900</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 6 400</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 6 400</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 700 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 2 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 200 грн</div>
+      </div>
+
+      <!-- iPhone  X-->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone XS</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 4 900</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 6 200</b></span></div>
+        <div class="price-row"><span>512 GB</span><span><b> 6 200</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 90%: - 1 500 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 2 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 200 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone X</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 4 300</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 5 600</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 000 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 1 800 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 200 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone XR</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 4 500</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 6 000</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 6 000</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 400 грн</div>
+        <div class="defect2"> • Пил в камерах: - 1 200 грн</div>
+        <div class="defect4"> • Переклей дисп.: - 1 800 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 200 грн</div>
+      </div>
+    </div>
+
+    <!-- iPhone 8 -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> SE 2022/2020 </span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone SE 2022</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 3 300</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 3 800</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 4 000</b></span></div>
+        <div class="defect3"> • Викуп: - 1 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 200 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 000 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> iPhone SE 2020 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>64 GB</span><span><b> 2 800</b></span></div>
+        <div class="price-row"><span>128 GB</span><span><b> 3 100</b></span></div>
+        <div class="price-row"><span>256 GB</span><span><b> 3 300</b></span></div>
+        <div class="defect3"> • Викуп: - 1 000 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 200 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 000 грн</div>
+      </div>
+    </div>
+
+    <!-- Apple Watch -->
+    <div class="series" onclick="toggleSubModels(this)" data-category="iphone">
+      <span><i class="fas fa-layer-group"></i> Apple Watch ⌚️</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="sub-models">
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series 10 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>42 mm</span><span><b> 10 200</b></span></div>
+        <div class="price-row"><span>46 mm</span><span><b> 10 500</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <!-- iPhone 13 Pro -->
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series 9</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>41 mm</span><span><b> 5 700</b></span></div>
+        <div class="price-row"><span>45 mm</span><span><b> 6 200</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series 8</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>41 mm</span><span><b> 5 200</b></span></div>
+        <div class="price-row"><span>45 mm</span><span><b> 5 500</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series 7 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>41 mm</span><span><b> 3 100</b></span></div>
+        <div class="price-row"><span>45 mm</span><span><b> 3 500</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series 6 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>40 mm</span><span><b> 1 600</b></span></div>
+        <div class="price-row"><span>44 mm</span><span><b> 1 600</b></span></div>
+        <div class="defect3"> • Викуп: - 1 200 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 500 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series SE2 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>40 mm</span><span><b> 5 000</b></span></div>
+        <div class="price-row"><span>44 mm</span><span><b> 5 300</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 700 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series Ultra 2 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>49 mm</span><span><b> 20 000</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 2 000 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 2 500 грн</div>
+      </div>
+      <div class="model" onclick="toggleDetails(this)">
+        <span><i class="fas fa-mobile-alt"></i> Apple Watch Series Ultra 1 </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="details">
+        <div class="price-row"><span>49 mm</span><span><b> 14 500</b></span></div>
+        <div class="defect3"> • Викуп: - 1 500 грн</div>
+        <div class="defect"> • АКБ менше 86%: - 1 700 грн</div>
+        <div class="defect5"> • Подряпини, сколи: - 1 700 грн</div>
+      </div>
+    </div>
+
+    <!-- Оцінка AirPods -->
+  </div>
+
+  <!-- Оцінка AirPods -->
+  <div id="airpods" class="page" style="display:none;">
+    <div class="card" style="max-width: 800px; margin: 40px auto; padding: 20px;">
+      <div class="info-container">
+        <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 20px;">Оцінка AirPods</h2>
+        <table style="width: 100%; border-spacing: 0; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th style="text-align: left; padding: 12px 18px; font-size: 18px; color: #007aff;">Модель</th>
+              <th style="text-align: right; padding: 12px 18px; font-size: 18px; color: #007aff;">Оцінка</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e5ea;">
+              <td style="padding: 14px 18px; font-size: 16px;">AirPods 2</td>
+              <td style="padding: 14px 18px; font-size: 16px;">
+                <span style="color: rgb(0, 255, 30); font-weight: 600;">A+ 1700</span> /
+                <span style="color: red; font-weight: 600;">B- 1300</span>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e5ea;">
+              <td style="padding: 14px 18px; font-size: 16px;">AirPods 3</td>
+              <td style="padding: 14px 18px; font-size: 16px;">
+                <span style="color: rgb(0, 255, 30); font-weight: 600;">A+ 2000</span> /
+                <span style="color: red; font-weight: 600;">B- 1500</span>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e5ea;">
+              <td style="padding: 14px 18px; font-size: 16px;">AirPods Pro 2</td>
+              <td style="padding: 14px 18px; font-size: 16px;">
+                <span style="color: rgb(0, 255, 30); font-weight: 600;">A+ 3000</span> /
+                <span style="color: red; font-weight: 600;">B- 2500</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 18px; font-size: 16px;">AirPods 4</td>
+              <td style="padding: 14px 18px; font-size: 16px;">
+                <span style="color: rgb(0, 255, 30); font-weight: 600;">A+ 2800</span> /
+                <span style="color: red; font-weight: 600;">B- 2500</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div id="iphone_check" class="page" style="display:none;">
+    <div class="card" style="max-width: 800px; margin: 40px auto; padding: 20px;">
+      <h2>Перевірка</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Уточнити у клієнта, що змінювалося в телефоні, чи був він у ремонті?
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка телефона на розшук за базою <a href="https://wanted.mvs.gov.ua/searchthing">МВД</a>
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Підключення телефона до програми <b>3uTools</b>
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Оцінка зовнішнього стану (ГНУТОСТЬ КОРПУСА, сколы, подряпины, вмятины, тріщини)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка наявності болтів і цілісність сіточок динаміків (верхніх і нижніх)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка на наявність люфту екрана з корпусом
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка екрана на оригінальність (товщина рамок, колір матриці повинен бути чорним, не сірим)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка працездатності всіх кнопок (на залипання, западання)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Вставляємо SIM-карту і слідкуємо, щоб не пропадала мережа
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Включаємо дисплей на максимальну яскравість і перевіряємо на мертві зони
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка дисплея на працездатність True Tone
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка дисплея на плями, засвічення на білому та чорному фоні
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка дисплея під кутом (щоб не було плям)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка камери (основної, фронтальної) на наявність плям у портретному режимі та пилу
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка мікрофонів камери (основної, фронтальної, запис пробного відео зі звуком)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка мікрофона диктофона та перевірка компаса
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка навушників (вставляємо навушники і перевіряємо працездатність)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка вібрації (Повзунок включення беззвучного режиму)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка роз'ємів навушників і зарядки (підключаємо навушники і зарядку)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка стану АКБ (щоб не було прочерка)
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Працездатність Wi-Fi та Bluetooth
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка функції Touch ID/Face ID
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Тестовий дзвінок, перевіряємо на гучному та звичайному зв'язку, датчик затемнення
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка функції Apple Pay
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірити звук (звучання верхнього та нижнього динаміка)
+          </label>
+        </li>
+      </ul>
+      <div class="warning" style="margin-top: 20px; color: red; font-weight: bold;">
+        При покупці телефона клієнта обов'язково робимо скидання контенту та налаштувань і активуємо через SIM-карту!
+      </div>
+      <h2>Перевірка Apple Watch</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Кнопка та Digital Crown працюють, легко натискаються/прокручуються
+          </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Задня кришка не відклеєна, без пошкоджень</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Не прив’язані до чужого Apple ID</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Bluetooth і Wi-Fi </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Перевірка сенсору</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Always-On (якщо є) </label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Працює підняття зап’ястя для активації екрана</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Вібрація</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Мікрофон</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Датчики працюють (пульс, SPO2, ЕКГ — залежно від моделі)</label>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <label>
+            <input type="checkbox" style="margin-right: 10px;">
+            Серійний номер збігається в налаштуваннях і на корпусі</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="remont" class="page" style="display:none;">
+    <div class="card remont-card">
+      <p id="remont-prompt">Введіть модель у пошук зверху</p>
+      <div class="model-select" style="margin-bottom:18px; text-align:center; display:none;">
+        <span class="custom-select" style="display:inline-block; width:100%; max-width:320px;">
+          <select id="model-remont">
+            <option value="16PM">iPhone 16 Pro Max</option>
+            <option value="16P">iPhone 16 Pro</option>
+            <option value="16plus">iPhone 16 +</option>
+            <option value="16">iPhone 16 </option>
+            <option value="15PM">iPhone 15 Pro Max</option>
+            <option value="15P">iPhone 15 Pro</option>
+            <option value="15plus">iPhone 15 +</option>
+            <option value="15">iPhone 15 </option>
+            <option value="14PM">iPhone 14 Pro Max</option>
+            <option value="14P">iPhone 14 Pro</option>
+            <option value="14plus">iPhone 14 +</option>
+            <option value="14">iPhone 14 </option>
+            <option value="13PM">iPhone 13 Pro Max</option>
+            <option value="13P">iPhone 13 Pro</option>
+            <option value="13mini">iPhone 13 mini</option>
+            <option value="13">iPhone 13 </option>
+            <option value="12PM">iPhone 12 Pro Max</option>
+            <option value="12P">iPhone 12 Pro</option>
+            <option value="12mini">iPhone 12 mini</option>
+            <option value="12">iPhone 12 </option>
+            <option value="11PM">iPhone 11 Pro Max</option>
+            <option value="11P">iPhone 11 Pro</option>
+            <option value="11">iPhone 11</option>
+            <option value="XSMAX">iPhone XS Max </option>
+            <option value="XS">iPhone XS</option>
+            <option value="X">iPhone X</option>
+            <option value="XR">iPhone XR</option>
+            <option value="SE2">iPhone SE 2020</option>
+            <option value="8plus">iPhone 8 +</option>
+            <option value="8">iPhone 8</option>
+          </select>
+        </span>
+      </div>
+      <div class="table-wrapper">
+        <table id="price-table-remont">
+          <thead>
+            <tr>
+              <th>Вид ремонту</th>
+              <th>Вартість</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS will fill this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="pencil" class="page" style="display:none;">
+    <div class="card pencil-card">
+      <h2 style="text-align: center; margin-bottom: 20px;">Підібрати Pencil</h2>
+      <p id="pencil-prompt" style="text-align: center; opacity: 0.7;">Введіть модель iPad у пошук зверху</p>
+
+      <div id="pencil-results" style="display: none;">
+        <!-- Pencil 1 -->
+        <div class="details pencil-item"
+          data-models="mini 5, ipad 6, ipad 7, ipad 8, ipad 9, ipad 10, ipad 11, air 3, pro 12.9 1, pro 12.9 2, pro 10.5, pro 9.7">
+          <p><b>Pencil 1</b></p>
+          <p>Базовою моделлю, яка підключається через роз’єм Lightning.</p>
+          <ul>
+            <li>iPad mini (5-го покоління)</li>
+            <li>iPad (6-го, 7-го, 8-го та 9-го покоління)</li>
+            <li>iPad (10-го та 11-го покоління)* (потрібен перехідник)</li>
+            <li>iPad Air (3-го покоління)</li>
+            <li>iPad Pro 12,9 дюйма (1-го й 2-го покоління)</li>
+            <li>iPad Pro 10,5 дюйма</li>
+            <li>iPad Pro 9,7 дюйма</li>
+          </ul>
+        </div>
+
+        <!-- Pencil 2 -->
+        <div class="details pencil-item"
+          data-models="mini 6, air 4, air 5, pro 12.9 3, pro 12.9 4, pro 12.9 5, pro 12.9 6, pro 11 1, pro 11 2, pro 11 3, pro 11 4">
+          <p><b>Pencil 2</b></p>
+          <p>Підтримує бездротове підключення та заряджання, а також функцію подвійного дотику для зміни інструментів.
+          </p>
+          <ul>
+            <li>iPad mini (6-го покоління)</li>
+            <li>iPad Air (4-го або 5-го покоління)</li>
+            <li>iPad Pro 12,9 дюйма (3-го, 4-го, 5-го або 6-го покоління)</li>
+            <li>iPad Pro 11 дюймів (1-го, 2-го, 3-го або 4-го покоління)</li>
+          </ul>
+        </div>
+
+        <!-- Pencil Type-C -->
+        <div class="details pencil-item"
+          data-models="pro m4, air m2, air m3, pro 11 1, pro 11 2, pro 11 3, pro 11 4, pro 12.9 3, pro 12.9 4, pro 12.9 5, pro 12.9 6, air 4, air 5, ipad 10, ipad 11, mini a17, mini 6">
+          <p><b>Pencil Type-C</b></p>
+          <p>Підключення через USB-C (немає магнітного кріплення чи бездротової зарядки).</p>
+          <p>Чутливість до натиску та нахилу для точного малювання та письма.</p>
+          <ul>
+            <li>iPad Pro (M4)</li>
+            <li>iPad Air (M2/M3)</li>
+            <li>iPad Pro 11 дюймів (1-го, 2-го, 3-го або 4-го покоління)</li>
+            <li>iPad Pro 12,9 дюйма (3-го, 4-го, 5-го або 6-го покоління)</li>
+            <li>iPad Air (4-го або 5-го покоління)</li>
+            <li>iPad (10-го та 11-го покоління)</li>
+            <li>iPad mini (A17 Pro)</li>
+            <li>iPad mini (6-го покоління)</li>
+          </ul>
+        </div>
+
+        <!-- Pencil Pro -->
+        <div class="details pencil-item" data-models="pro m4, air m2, air m3, mini a17">
+          <p><b>Pencil Pro</b></p>
+          <p>Тактильний зворотний зв’язок, обертання, стискання та інтеграцію з «Локатором» для легкого пошуку пристрою.
+          </p>
+          <ul>
+            <li>iPad Pro (M4)</li>
+            <li>iPad Air (M2/M3)</li>
+            <li>iPad mini (A17 Pro)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle dropdown menu
+    const appleBtn = document.getElementById('appleBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    appleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => dropdownMenu.classList.remove('show'));
+    dropdownMenu.addEventListener('click', (e) => e.stopPropagation());
+
+    function toggleSubModels(seriesElement) {
+      const subModels = seriesElement.nextElementSibling;
+      const rightIcon = seriesElement.querySelector("i.fas.fa-chevron-down, i.fas.fa-chevron-up");
+
+      document.querySelectorAll(".sub-models").forEach(sm => sm.style.display = sm === subModels && sm.style.display !== "block" ? "block" : "none");
+      document.querySelectorAll(".series i.fas.fa-chevron-down, .series i.fas.fa-chevron-up").forEach(icon => {
+        if (icon === rightIcon) {
+          icon.className = subModels.style.display === "block" ? "fas fa-chevron-up" : "fas fa-chevron-down";
+        }
+      });
+    }
+
+    function toggleDetails(modelElement) {
+      const details = modelElement.nextElementSibling;
+      const rightIcon = modelElement.querySelector("i.fas.fa-chevron-down, i.fas.fa-chevron-up");
+
+      modelElement.parentElement.querySelectorAll(".details").forEach(d => d.style.display = d === details && d.style.display !== "block" ? "block" : "none");
+      modelElement.parentElement.querySelectorAll(".model i.fas.fa-chevron-down, .model i.fas.fa-chevron-up").forEach(icon => {
+        if (icon === rightIcon) {
+          icon.className = details.style.display === "block" ? "fas fa-chevron-up" : "fas fa-chevron-down";
+        }
+      });
+    }
+
+    function filterByCategory(category) {
+      const sections = {
+        tradein: document.getElementById('tradein'),
+        airpods: document.getElementById('airpods'),
+        och: document.getElementById('oplatabank'),
+        iphone_check: document.getElementById('iphone_check'),
+        pencil: document.getElementById('pencil')
+      };
+
+      Object.keys(sections).forEach(key => sections[key].style.display = key === category ? '' : 'none');
+
+      if (category === 'tradein') {
+        document.querySelectorAll('.series').forEach(series => {
+          const isVisible = ['tradein', 'iphone'].includes(series.dataset.category);
+          series.style.display = isVisible ? 'flex' : 'none';
+          if (!isVisible) series.nextElementSibling.style.display = 'none';
+        });
+      }
+
+      dropdownMenu.classList.remove('show');
+    }
+
+
+    window.onload = () => filterByCategory('tradein');
+  </script>
+
+  <!-- Сторінка розрахунку ОЧ -->
+  <!-- Сторінка розрахунку ОЧ -->
+  <div id="oplatabank" class="page" style="display:none;">
+    <div class="card"
+      style="max-width: 600px; margin: 40px auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); padding: 24px;">
+
+      <h2 style="font-size: 24px; margin-bottom: 20px; text-align: center; font-weight: 600;">Калькулятор ОЧ</h2>
+
+      <!-- 1. Input Amount -->
+      <div style="margin-bottom: 24px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Сума (грн)</label>
+        <input type="number" id="unified-amount" placeholder="Введіть суму"
+          style="width: 100%; padding: 14px; font-size: 18px; border-radius: 12px; border: 1px solid var(--glass-border); background: var(--input-bg); color: var(--text-color); outline: none; box-sizing: border-box;">
+      </div>
+
+      <!-- 2. Bank Selector -->
+      <div style="margin-bottom: 24px;">
+        <label style="display: block; margin-bottom: 12px; font-weight: 500;">Оберіть банк</label>
+        <div class="bank-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+          <button type="button" class="bank-btn active" data-bank="monobank">
+            <i class="fas fa-paw" style="margin-bottom: 5px; font-size: 20px;"></i>
+            <span>Mono</span>
+          </button>
+          <button type="button" class="bank-btn" data-bank="privatbank">
+            <i class="fas fa-university" style="margin-bottom: 5px; font-size: 20px;"></i>
+            <span>Privat +2%</span>
+          </button>
+          <button type="button" class="bank-btn" data-bank="abank">
+            <i class="fas fa-lemon" style="margin-bottom: 5px; font-size: 20px;"></i>
+            <span>A-Bank +1.7%</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Months Selector -->
+      <div style="margin-bottom: 24px;">
+        <label style="display: block; margin-bottom: 12px; font-weight: 500;">Кількість платежів</label>
+        <div class="month-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <button type="button" class="month-btn active" data-months="3">3</button>
+          <button type="button" class="month-btn" data-months="6">6</button>
+          <button type="button" class="month-btn" data-months="10">10</button>
+          <button type="button" class="month-btn" data-months="12">12</button>
+          <button type="button" class="month-btn" data-months="15">15</button>
+          <button type="button" class="month-btn" data-months="18">18</button>
+        </div>
+      </div>
+
+      <!-- 4. Result -->
+      <div class="details"
+        style="display:block; margin-top: 20px; background: var(--input-bg); border: 1px solid var(--glass-border);">
+        <div class="price-row" style="font-size: 16px;">
+          <span>Вартість по 1С:</span>
+          <b id="formula-result" style="color: var(--text-color);">0.00 ₴</b>
+        </div>
+        <div class="price-row"
+          style="font-size: 18px; margin-top: 10px; border-top: 1px solid var(--glass-border); padding-top: 10px;">
+          <span>В місяць по:</span>
+          <b id="monthly-result" style="color: var(--accent-color); font-size: 22px;">0.00 ₴</b>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </script>
+  <script>
+    function filterByCategory(category) {
+      console.log("Selected:", category);
+      // твій існуючий код фільтрації
+    }
+
+    const serviceIcons = {
+      'Заміна дисплею': '<i class="fas fa-mobile-alt" style="color:#007aff;"></i>',
+      'Переклей дисплею': '<i class="fas fa-window-maximize" style="color:#00c853;"></i>',
+      'Заміна АКБ': '<i class="fas fa-battery-full" style="color:#ffb300;"></i>',
+      'Заміна скла кришки': '<i class="fas fa-square" style="color:#6c757d;"></i>',
+      'Заміна корпусу': '<i class="fas fa-border-all" style="color:#8e24aa;"></i>'
+    };
+    // Прайс ремонта
+    const pricesRemont = {
+      '16PM': [
+        { service: 'Заміна дисплею', price: '20 300' },
+        { service: 'Переклей дисплею', price: '10 000' },
+        { service: 'Заміна АКБ', price: '5 000' },
+        { service: 'Заміна скла кришки', price: '0 000' },
+      ],
+      '16P': [
+        { service: 'Заміна дисплею', price: '19 000' },
+        { service: 'Переклей скла дисплею', price: '10 000' },
+        { service: 'Заміна аккумулятора', price: '5 000' },
+        { service: 'Заміна заднього скла', price: '0 000' },
+      ],
+      '16plus': [
+        { service: 'Заміна дисплею', price: '13 000' },
+        { service: 'Переклей скла дисплею', price: '9 000' },
+        { service: 'Заміна аккумулятора', price: '5 000' },
+        { service: 'Заміна заднього скла', price: '0 000' },
+      ],
+      '16': [
+        { service: 'Заміна дисплею', price: '13 000' },
+        { service: 'Переклей скла дисплею', price: '8 000' },
+        { service: 'Заміна аккумулятора', price: '4 500' },
+        { service: 'Заміна заднього скла', price: '0 000' },
+      ],
+      '15PM': [
+        { service: 'Заміна дисплею', price: '17 000' },
+        { service: 'Переклей скла дисплею', price: '10 000' },
+        { service: 'Заміна аккумулятора', price: '4 600' },
+        { service: 'Заміна заднього скла', price: '5 000' },
+      ],
+      '15P': [
+        { service: 'Заміна дисплею', price: '13 800' },
+        { service: 'Переклей скла дисплею', price: '6 700' },
+        { service: 'Заміна аккумулятора', price: '4 100' },
+        { service: 'Заміна заднього скла', price: '4 800' },
+      ],
+      '15plus': [
+        { service: 'Заміна дисплею', price: '10 500' },
+        { service: 'Переклей скла дисплею', price: '6 500' },
+        { service: 'Заміна аккумулятора', price: '4 000' },
+        { service: 'Заміна заднього скла', price: '4 300' },
+      ],
+      '15': [
+        { service: 'Заміна дисплею', price: '8 700' },
+        { service: 'Переклей скла дисплею', price: '6 200' },
+        { service: 'Заміна аккумулятора', price: '3 000' },
+        { service: 'Заміна заднього скла', price: '4 100' },
+      ],
+      '14PM': [
+        { service: 'Заміна дисплею', price: '15 500' },
+        { service: 'Переклей скла дисплею', price: '7 000' },
+        { service: 'Заміна аккумулятора', price: '4 300' },
+        { service: 'Заміна заднього скла', price: '4 000' },
+      ],
+      '14P': [
+        { service: 'Заміна дисплею', price: '16 500' },
+        { service: 'Переклей скла дисплею', price: '5 500' },
+        { service: 'Заміна аккумулятора', price: '3 500' },
+        { service: 'Заміна заднього скла', price: '4 000' },
+      ],
+      '14plus': [
+        { service: 'Заміна дисплею', price: '7 000' },
+        { service: 'Переклей скла дисплею', price: '5 000' },
+        { service: 'Заміна аккумулятора', price: '4 000' },
+        { service: 'Заміна заднього скла', price: '3 000' },
+      ],
+      '14': [
+        { service: 'Заміна дисплею', price: '7 000' },
+        { service: 'Переклей скла дисплею', price: '5 500' },
+        { service: 'Заміна аккумулятора', price: '3 500' },
+        { service: 'Заміна заднього скла', price: '2 500' },
+      ],
+      '13PM': [
+        { service: 'Заміна дисплею', price: '11 000' },
+        { service: 'Переклей скла дисплею', price: '6 500' },
+        { service: 'Заміна аккумулятора', price: '4 000' },
+        { service: 'Заміна заднього скла', price: '3 500' },
+      ],
+      '13P': [
+        { service: 'Заміна дисплею', price: '9 500' },
+        { service: 'Переклей скла дисплею', price: '5 000' },
+        { service: 'Заміна аккумулятора', price: '3 300' },
+        { service: 'Заміна заднього скла', price: '2 500' },
+      ],
+      '13mini': [
+        { service: 'Заміна дисплею', price: '6 000' },
+        { service: 'Переклей скла дисплею', price: '4 000' },
+        { service: 'Заміна аккумулятора', price: '3 000' },
+        { service: 'Заміна заднього скла', price: '2 000' },
+      ],
+      '13': [
+        { service: 'Заміна дисплею', price: '6 500' },
+        { service: 'Переклей скла дисплею', price: '5 000' },
+        { service: 'Заміна аккумулятора', price: '3 300' },
+        { service: 'Заміна заднього скла', price: '2 500' },
+      ],
+      '12PM': [
+        { service: 'Заміна дисплею', price: '7 500' },
+        { service: 'Переклей скла дисплею', price: '5 000' },
+        { service: 'Заміна аккумулятора', price: '3 000' },
+        { service: 'Заміна заднього скла', price: '3 000' },
+      ],
+      '12P': [
+        { service: 'Заміна дисплею', price: '6 000' },
+        { service: 'Переклей скла дисплею', price: '4 000' },
+        { service: 'Заміна аккумулятора', price: '2 600' },
+        { service: 'Заміна заднього скла', price: '2 200' },
+      ],
+      '12mini': [
+        { service: 'Заміна дисплею', price: '5 000' },
+        { service: 'Переклей скла дисплею', price: '3 000' },
+        { service: 'Заміна аккумулятора', price: '2 200' },
+        { service: 'Заміна заднього скла', price: '2 000' },
+      ],
+      '12': [
+        { service: 'Заміна дисплею', price: '6 000' },
+        { service: 'Переклей скла дисплею', price: '4 000' },
+        { service: 'Заміна аккумулятора', price: '2 600' },
+        { service: 'Заміна заднього скла', price: '2 200' },
+      ],
+      '11PM': [
+        { service: 'Заміна дисплею', price: '6 000' },
+        { service: 'Переклей скла дисплею', price: '3 800' },
+        { service: 'Заміна аккумулятора', price: '2 600' },
+        { service: 'Заміна заднього скла', price: '2 500' },
+      ],
+      '11P': [
+        { service: 'Заміна дисплею', price: '5 000' },
+        { service: 'Переклей скла дисплею', price: '3 500' },
+        { service: 'Заміна аккумулятора', price: '2 000' },
+        { service: 'Заміна заднього скла', price: '2 300' },
+      ],
+      '11': [
+        { service: 'Заміна дисплею', price: '4 500' },
+        { service: 'Переклей скла дисплею', price: '2 500' },
+        { service: 'Заміна аккумулятора', price: '2 000' },
+        { service: 'Заміна заднього скла', price: '2 000' },
+      ],
+      'XSMAX': [
+        { service: 'Заміна дисплею', price: '5 000' },
+        { service: 'Переклей скла дисплею', price: '3 500' },
+        { service: 'Заміна аккумулятора', price: '1 800' },
+        { service: 'Заміна заднього скла', price: '1 600' },
+      ],
+      'XS': [
+        { service: 'Заміна дисплею', price: '4 000' },
+        { service: 'Переклей скла дисплею', price: '3 000' },
+        { service: 'Заміна аккумулятора', price: '1 800' },
+        { service: 'Заміна заднього скла', price: '1 600' },
+      ],
+      'X': [
+        { service: 'Заміна дисплею', price: '4 000' },
+        { service: 'Переклей скла дисплею', price: '2 500' },
+        { service: 'Заміна аккумулятора', price: '1 800' },
+        { service: 'Заміна заднього скла', price: '1 600' },
+      ],
+      'XR': [
+        { service: 'Заміна дисплею', price: '4 000' },
+        { service: 'Переклей скла дисплею', price: '2 500' },
+        { service: 'Заміна аккумулятора', price: '1 800' },
+        { service: 'Заміна заднього скла', price: '1 600' },
+      ],
+      'SE2': [
+        { service: 'Заміна дисплею', price: '2 500' },
+        { service: 'Переклей скла дисплею', price: '1 500' },
+        { service: 'Заміна аккумулятора', price: '1 800' },
+        { service: 'Заміна заднього скла', price: '1 600' },
+      ],
+      '8plus': [
+        { service: 'Заміна дисплею', price: '2 000' },
+        { service: 'Переклей скла дисплею', price: '1 000' },
+        { service: 'Заміна аккумулятора', price: '1 000' },
+        { service: 'Заміна заднього скла', price: '1 500' },
+      ],
+      '8': [
+        { service: 'Заміна дисплею', price: '1 500' },
+        { service: 'Переклей скла дисплею', price: '1 000' },
+        { service: 'Заміна аккумулятора', price: '1 000' },
+        { service: 'Заміна заднього скла', price: '1 500' },
+      ]
+    };
+
+    function renderTableRemont(models) {
+      const tbody = document.querySelector('#price-table-remont tbody');
+      const prompt = document.getElementById('remont-prompt');
+      const tableWrapper = document.querySelector('#remont .table-wrapper');
+
+      // Ensure models is an array
+      if (!Array.isArray(models)) {
+        models = models ? [models] : [];
+      }
+
+      if (models.length === 0) {
+        tbody.innerHTML = '';
+        if (prompt) prompt.style.display = 'block';
+        if (tableWrapper) tableWrapper.style.display = 'none';
+        return;
+      }
+
+      if (prompt) prompt.style.display = 'none';
+      if (tableWrapper) tableWrapper.style.display = 'block';
+
+      tbody.innerHTML = '';
+
+      const modelNameMap = {
+        '16PM': 'iPhone 16 Pro Max', '16P': 'iPhone 16 Pro', '16plus': 'iPhone 16 Plus', '16': 'iPhone 16',
+        '15PM': 'iPhone 15 Pro Max', '15P': 'iPhone 15 Pro', '15plus': 'iPhone 15 Plus', '15': 'iPhone 15',
+        '14PM': 'iPhone 14 Pro Max', '14P': 'iPhone 14 Pro', '14plus': 'iPhone 14 Plus', '14': 'iPhone 14',
+        '13PM': 'iPhone 13 Pro Max', '13P': 'iPhone 13 Pro', '13mini': 'iPhone 13 mini', '13': 'iPhone 13',
+        '12PM': 'iPhone 12 Pro Max', '12P': 'iPhone 12 Pro', '12mini': 'iPhone 12 mini', '12': 'iPhone 12',
+        '11PM': 'iPhone 11 Pro Max', '11P': 'iPhone 11 Pro', '11': 'iPhone 11',
+        'XSMAX': 'iPhone XS Max', 'XS': 'iPhone XS', 'X': 'iPhone X', 'XR': 'iPhone XR',
+        'SE2': 'iPhone SE 2020', '8plus': 'iPhone 8 Plus', '8': 'iPhone 8'
+      };
+
+      models.forEach(model => {
+        if (!pricesRemont[model]) return;
+
+        // Add Header Row with Model Name
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = `<td colspan="2" style="text-align:center; font-weight:bold; background:var(--input-bg); color:var(--text-color);">${modelNameMap[model] || model}</td>`;
+        tbody.appendChild(headerRow);
+
+        pricesRemont[model].forEach(item => {
+          const icon = serviceIcons[item.service] || '';
+          const serviceText = `${icon} <span style="margin-left:8px;">${item.service}</span>`;
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${serviceText}</td><td class="price">${item.price}</td>`;
+          tbody.appendChild(tr);
+        });
+      });
+    }
+
+
+    document.getElementById('model-remont').addEventListener('change', function () {
+      renderTableRemont(this.value);
+    });
+
+    // Показывать только выбранную секцию
+    // Показывать только выбранную секцию
+    function filterByCategory(category) {
+      const sections = {
+        tradein: document.getElementById('tradein'),
+        airpods: document.getElementById('airpods'),
+        och: document.getElementById('oplatabank'),
+        iphone_check: document.getElementById('iphone_check'),
+        pencil: document.getElementById('pencil'),
+        remont: document.getElementById('remont')
+      };
+
+      Object.keys(sections).forEach(key => {
+        const section = sections[key];
+        if (!section) return;
+
+        if (key === category) {
+          section.style.display = '';
+          // Force animation visibility for elements in this section
+          const animated = section.querySelectorAll('.fade-in-section');
+          animated.forEach(el => {
+            el.classList.add('visible');
+            // Optional: restart animation? No, just make sure it's visible.
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      // Show/Hide Search Bar
+      const searchContainer = document.querySelector('.search-container');
+      if (searchContainer) {
+        if (category === 'tradein' || category === 'remont' || category === 'pencil') {
+          searchContainer.style.display = '';
+        } else {
+          searchContainer.style.display = 'none';
+        }
+      }
+    }
+
+    // Special handling for tradein: if search is empty, it might remain hidden via CSS.
+    // This is intended behavior (hide by default).
+
+    // Close dropdown if it exists
+    if (typeof dropdownMenu !== 'undefined') {
+      dropdownMenu.classList.remove('show');
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").then(() => {
+      console.log("✅ Service Worker зарегистрирован");
+    }).catch(err => console.error("❌ Ошибка SW:", err));
+  }
+
+
+  let lastScrollTop = 0;
+  const bottomNav = document.querySelector('.liquid-bottom-nav');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Проверяем движение
+    if (currentScroll > lastScrollTop + 15) {
+      // Прокрутка вниз → скрываем
+      bottomNav.classList.add('hide');
+    } else if (currentScroll < lastScrollTop - 15) {
+      // Прокрутка вверх → показываем
+      bottomNav.classList.remove('hide');
+    }
+
+    lastScrollTop = Math.max(currentScroll, 0);
+  });
+
+  // --- Unified Payment Calculator ---
+  const bankRates = {
+    monobank: { 3: 3.1, 6: 8, 10: 13.7, 12: 16.9, 15: 21.6, 18: 26.5 },
+    privatbank: { 3: 1.8, 6: 7.7, 10: 15.6, 12: 16.6, 15: 21.6, 18: 26.6 },
+    abank: { 3: 3.4, 6: 7.8, 10: 12.5, 12: 14.8, 15: 17.9, 18: 21.5 }
+  };
+
+  function calculateUnified() {
+    const amountInput = document.getElementById('unified-amount');
+    const activeBankBtn = document.querySelector('.bank-btn.active');
+    const activeMonthBtn = document.querySelector('.month-btn.active');
+
+    if (!amountInput || !activeBankBtn || !activeMonthBtn) {
+      console.log('Missing elements:', { amountInput, activeBankBtn, activeMonthBtn });
+      return;
+    }
+
+    const amount = parseFloat(amountInput.value);
+    const bank = activeBankBtn.dataset.bank;
+    const months = parseInt(activeMonthBtn.dataset.months);
+
+    const formulaResult = document.getElementById('formula-result');
+    const monthlyResult = document.getElementById('monthly-result');
+
+    if (isNaN(amount) || amount <= 0) {
+      formulaResult.textContent = '0.00 ₴';
+      monthlyResult.textContent = '0.00 ₴';
+      return;
+    }
+
+    const percentage = bankRates[bank][months] || 0;
+    const totalWithPercentage = amount + (amount * (percentage / 100));
+    const monthlyPayment = totalWithPercentage / months;
+
+    formulaResult.textContent = `${totalWithPercentage.toFixed(2)} ₴`;
+    monthlyResult.textContent = `${monthlyPayment.toFixed(2)} ₴`;
+
+    console.log('Calculated:', { amount, bank, months, total: totalWithPercentage, monthly: monthlyPayment });
+  }
+
+  // Event Listeners for Calculator
+  const unifiedAmountInput = document.getElementById('unified-amount');
+  if (unifiedAmountInput) {
+    unifiedAmountInput.addEventListener('input', calculateUnified);
+    console.log('Amount input listener attached');
+  } else {
+    console.error('unified-amount input not found!');
+  }
+
+  const bankButtons = document.querySelectorAll('.bank-btn');
+  console.log('Found bank buttons:', bankButtons.length);
+  bankButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      bankButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      calculateUnified();
+    });
+  });
+
+  const monthButtons = document.querySelectorAll('.month-btn');
+  console.log('Found month buttons:', monthButtons.length);
+  monthButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      monthButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      calculateUnified();
+    });
+  });
+
+  console.log('Calculator initialized successfully');
+
+</script>
+
+</html>

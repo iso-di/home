@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Calculator</title>
+</head>
+
+<body>
+    <h1>Test Calculator</h1>
+
+    <input type="number" id="unified-amount" placeholder="Enter amount" value="10000">
+    <br><br>
+
+    <button class="bank-btn active" data-bank="monobank">Mono</button>
+    <button class="bank-btn" data-bank="privatbank">Privat</button>
+    <button class="bank-btn" data-bank="abank">A-Bank</button>
+    <br><br>
+
+    <button class="month-btn active" data-months="3">3</button>
+    <button class="month-btn" data-months="6">6</button>
+    <button class="month-btn" data-months="12">12</button>
+    <br><br>
+
+    <div>
+        <p>Вартість по 1С: <b id="formula-result">0.00 ₴</b></p>
+        <p>В місяць по: <b id="monthly-result">0.00 ₴</b></p>
+    </div>
+
+    <script>
+        const bankRates = {
+            monobank: { 3: 3.1, 6: 8, 10: 13.7, 12: 16.9, 15: 21.6, 18: 26.5 },
+            privatbank: { 3: 1.8, 6: 7.7, 10: 15.6, 12: 16.6, 15: 21.6, 18: 26.6 },
+            abank: { 3: 3.4, 6: 7.8, 10: 12.5, 12: 14.8, 15: 17.9, 18: 21.5 }
+        };
+
+        function calculateUnified() {
+            console.log('calculateUnified called');
+            const amountInput = document.getElementById('unified-amount');
+            const activeBankBtn = document.querySelector('.bank-btn.active');
+            const activeMonthBtn = document.querySelector('.month-btn.active');
+
+            console.log('Elements:', { amountInput, activeBankBtn, activeMonthBtn });
+
+            if (!amountInput || !activeBankBtn || !activeMonthBtn) {
+                console.log('Missing elements!');
+                return;
+            }
+
+            const amount = parseFloat(amountInput.value);
+            const bank = activeBankBtn.dataset.bank;
+            const months = parseInt(activeMonthBtn.dataset.months);
+
+            console.log('Values:', { amount, bank, months });
+
+            const formulaResult = document.getElementById('formula-result');
+            const monthlyResult = document.getElementById('monthly-result');
+
+            if (isNaN(amount) || amount <= 0) {
+                formulaResult.textContent = '0.00 ₴';
+                monthlyResult.textContent = '0.00 ₴';
+                return;
+            }
+
+            const percentage = bankRates[bank][months] || 0;
+            const totalWithPercentage = amount + (amount * (percentage / 100));
+            const monthlyPayment = totalWithPercentage / months;
+
+            formulaResult.textContent = `${totalWithPercentage.toFixed(2)} ₴`;
+            monthlyResult.textContent = `${monthlyPayment.toFixed(2)} ₴`;
+
+            console.log('Calculated!', { total: totalWithPercentage, monthly: monthlyPayment });
+        }
+
+        // Event Listeners
+        const unifiedAmountInput = document.getElementById('unified-amount');
+        if (unifiedAmountInput) {
+            unifiedAmountInput.addEventListener('input', calculateUnified);
+            console.log('Input listener attached');
+        }
+
+        const bankButtons = document.querySelectorAll('.bank-btn');
+        bankButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                bankButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                calculateUnified();
+            });
+        });
+
+        const monthButtons = document.querySelectorAll('.month-btn');
+        monthButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                monthButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                calculateUnified();
+            });
+        });
+
+        // Initial calculation
+        calculateUnified();
+    </script>
+</body>
+
+</html>
