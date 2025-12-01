@@ -90,6 +90,9 @@ button {
     padding: 20px;
     /* Reduced padding for mobile */
     height: 100vh;
+    /* Fallback */
+    height: 100dvh;
+    /* Dynamic height for mobile browsers */
     overflow: hidden;
     /* Keep it fixed like an app */
     position: relative;
@@ -368,5 +371,43 @@ button {
 
     100% {
         transform: scale(1);
+    }
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+    #showcase-screen {
+        padding-bottom: 60px;
+        /* Larger bottom padding for mobile */
+    }
+
+    #phone-visual {
+        height: 38vh;
+        /* Slightly smaller image to ensure card fits well */
+    }
+
+    .info-card {
+        padding: 20px;
+        /* Compact padding for small screens */
+        margin-bottom: 10px;
+        /* Extra lift from bottom */
+    }
+
+    .new-price {
+        font-size: 42px;
+        /* Adjust font size for mobile */
+    }
+
+    .logo {
+        height: 70px;
+        /* Adjust logo size */
+    }
+}
+
+@media (min-width: 601px) and (max-height: 800px) {
+
+    /* For landscape or short desktop windows */
+    #phone-visual {
+        height: 40vh;
     }
 }
