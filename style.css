@@ -108,6 +108,14 @@ button {
     animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .logo {
     height: 90px;
     /* Increased size significantly */
@@ -153,9 +161,8 @@ button {
 }
 
 #phone-visual {
-    height: auto;
-    max-height: 50vh;
-    /* Slightly reduced to ensure bottom content fits */
+    height: 45vh;
+    /* Fixed height for consistency */
     width: auto;
     max-width: 90%;
     object-fit: contain;
@@ -175,16 +182,16 @@ button {
 .info-card {
     width: 100%;
     background: #ffffff;
-    border-radius: 32px 32px 0 0;
-    /* Rounded top only, looks like a sheet */
-    padding: 16px 24px 30px 24px;
-    /* Tighter padding */
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
+    border-radius: 32px;
+    /* Fully rounded */
+    padding: 24px;
+    /* Balanced padding */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: -10px;
-    /* Pull it down slightly to touch bottom */
+    margin-bottom: 0;
+    /* Remove negative margin */
     flex-shrink: 0;
 
     transform: translateY(100%);

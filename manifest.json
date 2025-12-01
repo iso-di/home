@@ -1,6 +1,6 @@
 {
-  "name": "iPhone ",
-  "short_name": "iphosha",
+  "name": "iPhone Showcase",
+  "short_name": "iShowcase",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
