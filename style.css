@@ -93,9 +93,13 @@ button {
     /* Fallback */
     height: 100dvh;
     /* Dynamic height for mobile browsers */
-    overflow: hidden;
+    /* Dynamic height for mobile browsers */
+    overflow-y: auto;
+    /* Allow scrolling */
+    overflow-x: hidden;
     /* Keep it fixed like an app */
     position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 .header {
@@ -117,6 +121,45 @@ button {
     height: 100%;
     width: 100%;
     justify-content: space-between;
+    min-height: 600px;
+    /* Ensure minimum height for layout */
+}
+
+/* ... (skipping unchanged parts) ... */
+
+.footnotes {
+    width: 100%;
+    margin-top: 12px;
+    padding: 0 16px 24px 16px;
+    /* Add bottom padding for scroll */
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.footnotes p {
+    font-size: 11px;
+    /* Slightly larger for visibility */
+    color: #86868b;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+    opacity: 0.9;
+}
+
+/* ... */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .logo {
