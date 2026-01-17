@@ -15,7 +15,7 @@ export const used_iphone = [
         version: "Neverlock",
         warranty: "до 1 року*",
         availability: "in_stock",
-        image: "home/used/15pnatural.jpg",
+        image: "home/demo/used/15pnatural.jpg",
         tags: ["15", "15 Pro", "15 Pro Max"]
     },
     {
@@ -31,7 +31,7 @@ export const used_iphone = [
         version: "Neverlock",
         warranty: "до 1 року*",
         availability: "in_stock",
-        image: "home/used/15blue.jpg",
+        image: "home/demo/used/15blue.jpg",
         tags: ["15", "Blue"]
     },
     {
@@ -47,7 +47,7 @@ export const used_iphone = [
         version: "Neverlock",
         warranty: "до 1 року*",
         availability: "in_stock",
-        image: "home/used/12purple.jpg",
+        image: "home/demo/used/12purple.jpg",
         tags: ["12", "Purple"]
     },
     {
@@ -63,7 +63,7 @@ export const used_iphone = [
         version: "Neverlock",
         warranty: "до 1 року*",
         availability: "in_stock",
-        image: "home/used/13pink.jpg",
+        image: "home/demo/used/13pink.jpg",
         tags: ["13", "Pink"]
     },
     {
@@ -79,7 +79,7 @@ export const used_iphone = [
         version: "Neverlock",
         warranty: "до 1 року*",
         availability: "in_stock",
-        image: "home/used/16pmdes.jpg",
+        image: "home/demo/used/16pmdes.jpg",
         tags: ["16", "Pro", "Max"]
     }
 ];
