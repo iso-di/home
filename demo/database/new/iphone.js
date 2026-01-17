@@ -12,7 +12,7 @@ export const new_iphone = [
         memory: "256GB",
         warranty: "1 рік від Apple",
         availability: "pre_order",
-        image: "new/17pblue.png",
+        image: "home/new/17pblue.png",
         tags: ["17", "Pro"]
     },
     {
