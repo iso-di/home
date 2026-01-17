@@ -1,0 +1,85 @@
+/**
+ * 🍏 ВЖИВАНА ТЕХНІКА: iPhone
+ */
+export const used_iphone = [
+    {
+        id: "used-iphone-15-pro-max",
+        category: "iphone",
+        model: "iPhone 15 Pro Max",
+        color: "Natural Titanium",
+        price: 45000,
+        oldPrice: 48000,
+        battery: "100%",
+        condition: "Ідеальний",
+        memory: "256GB",
+        version: "Neverlock",
+        warranty: "до 1 року*",
+        availability: "in_stock",
+        image: "used/15pnatural.jpg",
+        tags: ["15", "15 Pro", "15 Pro Max"]
+    },
+    {
+        id: "used-iphone-15",
+        category: "iphone",
+        model: "iPhone 15 Blue",
+        color: "Blue",
+        price: 25000,
+        oldPrice: 28000,
+        battery: "100%",
+        condition: "Ідеальний",
+        memory: "128GB",
+        version: "Neverlock",
+        warranty: "до 1 року*",
+        availability: "in_stock",
+        image: "used/15blue.jpg",
+        tags: ["15", "Blue"]
+    },
+    {
+        id: "used-iphone-12",
+        category: "iphone",
+        model: "iPhone 12 Purple",
+        color: "Purple",
+        price: 25000,
+        oldPrice: 28000,
+        battery: "100%",
+        condition: "Ідеальний",
+        memory: "128GB",
+        version: "Neverlock",
+        warranty: "до 1 року*",
+        availability: "in_stock",
+        image: "used/12purple.jpg",
+        tags: ["12", "Purple"]
+    },
+    {
+        id: "used-iphone-13",
+        category: "iphone",
+        model: "iPhone 13 Pink",
+        color: "Pink",
+        price: 25000,
+        oldPrice: 28000,
+        battery: "100%",
+        condition: "Ідеальний",
+        memory: "128GB",
+        version: "Neverlock",
+        warranty: "до 1 року*",
+        availability: "in_stock",
+        image: "used/13pink.jpg",
+        tags: ["13", "Pink"]
+    },
+    {
+        id: "used-iphone-16-pro-max",
+        category: "iphone",
+        model: "iPhone 16 Pro Max",
+        color: "Desert Titanium",
+        price: 58000,
+        oldPrice: 62000,
+        battery: "100%",
+        condition: "Ідеальний",
+        memory: "256GB",
+        version: "Neverlock",
+        warranty: "до 1 року*",
+        availability: "in_stock",
+        image: "used/16pmdes.jpg",
+        tags: ["16", "Pro", "Max"]
+    }
+];

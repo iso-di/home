@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Айфоша — Продаж та обмін Apple техніки | Суми</title>
+    <meta name="description"
+        content="Купити iPhone, MacBook, iPad, Apple Watch та AirPods у Сумах. Найкращі ціни на нову та вживану техніку Apple з гарантією.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pagination.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Abstract Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="Айфоша.svg" alt="Айфоша">
+            </a>
+            <nav class="nav">
+                <a href="tel:+380668001113" class="nav-phone-link">+380 (66) 800-111-3</a>
+                <div class="header-socials">
+                    <a href="https://t.me/iphosha_sumy" target="_blank" class="nav-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/iphosha_sumy" target="_blank" class="nav-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 60px;">
+
+        <section id="inventory" class="inventory-section">
+            <div class="container">
+                <div class="type-toggle" id="type-toggle">
+                    <div class="toggle-slider"></div>
+                    <button class="toggle-btn active" data-type="used">Вживана Техніка</button>
+                    <button class="toggle-btn" data-type="new">Нова Техніка</button>
+                </div>
+
+                <div class="mini-search-container">
+                    <div class="mini-search-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="phone-search" class="mini-search-input" placeholder="Пошук моделі...">
+                    </div>
+
+                    <div class="sort-wrapper">
+                        <select id="price-sort" class="sort-select">
+                            <option value="default">Використати фільтр</option>
+                            <option value="cheap">Спочатку дешевші</option>
+                            <option value="expensive">Спочатку дорожчі</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="category-nav" id="category-nav">
+                    <div class="cat-item active" data-cat="iphone">
+                        <img src="icons/iphone.png" class="cat-icon" alt="iPhone">
+                        <span class="cat-label">iPhone</span>
+                    </div>
+                    <div class="cat-item" data-cat="ipad">
+                        <img src="icons/ipad.png" class="cat-icon" alt="iPad">
+                        <span class="cat-label">iPad</span>
+                    </div>
+                    <div class="cat-item" data-cat="macbook">
+                        <img src="icons/macbook.png" class="cat-icon" alt="MacBook">
+                        <span class="cat-label">MacBook</span>
+                    </div>
+                    <div class="cat-item" data-cat="airpods">
+                        <img src="icons/airpods.png" class="cat-icon" alt="AirPods">
+                        <span class="cat-label">AirPods</span>
+                    </div>
+                    <div class="cat-item" data-cat="watch">
+                        <img src="icons/applewatch.png" class="cat-icon" alt="Watch">
+                        <span class="cat-label">Watch</span>
+                    </div>
+                    <div class="cat-item" data-cat="gadgets">
+                        <img src="icons/gadgets.png" class="cat-icon" alt="Gadgets">
+                        <span class="cat-label">Gadgets</span>
+                    </div>
+                </div>
+
+
+                <div class="inventory-grid" id="inventory-grid">
+                    <!-- Products will be injected here via JS -->
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="pagination-controls" id="pagination-controls">
+                    <!-- Pagination buttons will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts-section">
+            <div class="container">
+                <div class="glass-card contact-card">
+                    <h2 class="section-title">Контакти</h2>
+                    <div class="contacts-wrapper">
+                        <div class="contact-item">
+                            <h3>Дзвоніть нам</h3>
+                            <a href="tel:+380668001113" class="contact-link">+380 (66) 800-111-3</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Приходьте</h3>
+                            <p>Суми, вул. Харківська, 4</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Ми працюємо</h3>
+                            <p>Щодня 10:00 - 19:00</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://t.me/iphosha_sumy" target="_blank" class="social-btn telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Telegram
+                        </a>
+                        <a href="https://www.instagram.com/iphosha_sumy" target="_blank" class="social-btn instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Айфоша Service. Design by Dmytro Solodovnyk.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="glass-modal">
+            <button class="modal-close">&times;</button>
+            <h2 id="modal-title">Залишити заявку</h2>
+            <form class="modal-form">
+                <input type="text" id="client-name" class="form-input" placeholder="Як вас звати?" required>
+                <input type="tel" id="client-phone" class="form-input" placeholder="Ваш телефон" required>
+                <button type="submit" class="btn-primary">Відправити</button>
+            </form>
+            <p id="modal-warranty-disclaimer"
+                style="display: none; margin-top: 15px; font-size: 14px; color: var(--text-secondary); opacity: 0.8; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 10px;">
+                Гарантія оплачується окремо
+            </p>
+        </div>
+    </div>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+</body>
+
+</html>
